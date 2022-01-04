@@ -20,7 +20,11 @@ public class Entidade {
         this.designacao=STRING_POR_OMISSAO;
         this.tipoEntidade=new TipoEntidade();
     }
-    
+    /**
+     * 
+     * @param designacao
+     * @param tipo 
+     */
     public Entidade(String designacao,TipoEntidade tipo){
         this.referencia=nroEntidade++;
         this.designacao=designacao;
