@@ -4,6 +4,7 @@
  */
 package model;
 
+import utilitarios.Data;
 import utilitarios.DataHora;
 
 /**
@@ -15,6 +16,7 @@ public class Atuacao {
     private int codigo;
     private Artista artista;
     private DataHora dataInicio;
+    private DataHora dataFim;
     private int duracao;
     private Palco palco;
 
@@ -25,14 +27,16 @@ public class Atuacao {
         this.codigo = nroAtuacao++;
         this.artista = new Artista();
         this.dataInicio = new DataHora();
+        this.dataFim = new DataHora();
         this.duracao = INT_POR_OMISSAO;
         this.palco = new Palco();
     }
 
-    public Atuacao(Artista artista, DataHora dataInicio, int duracao, Palco palco) {
+    public Atuacao(Artista artista, DataHora dataInicio, DataHora dataFim, int duracao, Palco palco) {
         this.codigo = nroAtuacao++;
         this.artista = new Artista(artista);
         this.dataInicio = new DataHora(dataInicio);
+        this.dataFim = new DataHora(dataFim);
         this.duracao = duracao;
         this.palco = new Palco(palco);
     }
@@ -41,6 +45,7 @@ public class Atuacao {
         this.codigo = nroAtuacao++;
         this.artista = atuacao.artista;
         this.dataInicio = atuacao.dataInicio;
+        this.dataFim = atuacao.dataFim;
         this.duracao = atuacao.duracao;
         this.palco = atuacao.palco;
     }
@@ -55,6 +60,10 @@ public class Atuacao {
 
     public DataHora getDataInicio() {
         return dataInicio;
+    }
+
+    public DataHora getDataFim() {
+        return dataFim;
     }
 
     public int getDuracao() {
@@ -75,6 +84,10 @@ public class Atuacao {
 
     public void setDataInicio(DataHora dataInicio) {
         this.dataInicio = new DataHora(dataInicio);
+    }
+
+    public void setDataFim(DataHora dataFim) {
+        this.dataFim = new DataHora(dataFim);
     }
 
     public void setDuracao(int duracao) {

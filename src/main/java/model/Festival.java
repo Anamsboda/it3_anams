@@ -24,6 +24,7 @@ public class Festival {
     private ArrayList<Entidade> entidadeColaboradora;
     private String edicaoFestival;
     private DataHora dataInicioFestival;
+    private DataHora dataFimFestival;
     private Recinto recintoFestival;
 
     private static int nroFestival = 0;
@@ -36,24 +37,27 @@ public class Festival {
         this.entidadeColaboradora = new ArrayList<>();
         this.edicaoFestival = STRING_POR_OMISSAO;
         this.dataInicioFestival = new DataHora();
+        this.dataFimFestival = new DataHora();
         this.recintoFestival = new Recinto();
     }
 
-    public Festival(String designacao, String edicao, DataHora dataInicio, Recinto recinto) {
+    public Festival(String designacao, String edicao, DataHora dataInicio, DataHora dataFimFestiva, Recinto recinto) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>();
         this.edicaoFestival = edicao;
         this.dataInicioFestival = dataInicio;
+        this.dataInicioFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
     }
 
-    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, DataHora dataInicio, Recinto recinto) {
+    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, DataHora dataInicio, DataHora dataFimFestival, Recinto recinto) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>(entidadeColaboradora);
         this.edicaoFestival = edicao;
         this.dataInicioFestival = dataInicio;
+        this.dataFimFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
     }
 
@@ -62,6 +66,7 @@ public class Festival {
         this.designacaoFestival = festival.designacaoFestival;
         this.edicaoFestival = festival.edicaoFestival;
         this.dataInicioFestival = festival.dataInicioFestival;
+        this.dataFimFestival = festival.dataFimFestival;
         this.recintoFestival = new Recinto(festival.recintoFestival);
     }
 
@@ -83,6 +88,10 @@ public class Festival {
 
     public DataHora getDataInicioFestival() {
         return dataInicioFestival;
+    }
+
+    public DataHora getDataFimFestival() {
+        return dataFimFestival;
     }
 
     public Recinto getRecintoFestival() {
@@ -109,6 +118,10 @@ public class Festival {
         this.dataInicioFestival = dataInicioFestival;
     }
 
+    public void setDataFimFestival(DataHora dataFimFestival) {
+        this.dataFimFestival = dataFimFestival;
+    }
+
     public void setRecintoFestival(Recinto recintoFestival) {
         this.recintoFestival = recintoFestival;
     }
@@ -131,11 +144,13 @@ public class Festival {
                 && this.entidadeColaboradora.equals(other.entidadeColaboradora)
                 && this.edicaoFestival.equalsIgnoreCase(other.designacaoFestival)
                 && this.dataInicioFestival.equals(other.dataInicioFestival)
+                && this.dataFimFestival.equals(other.dataFimFestival)
                 && this.recintoFestival.equals(other.recintoFestival);
     }
 
     @Override
     public String toString() {
-        return "Festival{" + "referenciaFestival=" + referenciaFestival + ", designacaoFestival=" + designacaoFestival + ", entidadeColaboradora=" + entidadeColaboradora + ", edicaoFestival=" + edicaoFestival + ", dataInicioFestival=" + dataInicioFestival + ", recintoFestival=" + recintoFestival + '}';
+        return "Festival{" + "referenciaFestival=" + referenciaFestival + ", designacaoFestival=" + designacaoFestival + ", entidadeColaboradora=" + entidadeColaboradora + ", edicaoFestival=" + edicaoFestival + ", dataInicioFestival=" + dataInicioFestival + ", dataFimFestival=" + dataFimFestival + ", recintoFestival=" + recintoFestival + '}';
     }
+
 }
