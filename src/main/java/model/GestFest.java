@@ -233,7 +233,7 @@ public class GestFest {
         return false;
     }
 
-    public Festival procurarFestival(String festival) {
+    public Festival procurarFestivalDesgn(String festival) {
         for (Festival f : lstFestivais) {
             if (f.getDesignacaoFestival().equals(festival)) {
                 return f;
@@ -259,6 +259,14 @@ public class GestFest {
             }
         }
         return new Entidade();
+    }
+
+    public String getFestivaisAsString() {
+        String festivaisString = "N.D.";
+        for (Festival f : lstFestivais) {
+            festivaisString += f.toString();
+        }
+        return festivaisString;
     }
     // Completar com outras funcionalidades
 }
