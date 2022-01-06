@@ -7,37 +7,39 @@ package model;
 /**
  *
  * GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ *
+ * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
+ * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
+ * <@!774356880800743434> PEREIRA MARTINS (1200698) --->TURMA 2DA
  */
 public class Localizacao {
+
     private String pais;
     private String cidade;
     private String rua;
     private String codigo_postal;
-    
-    private static final String STRING_POR_OMISSAO="";
-    
-    public Localizacao(){
-        this.pais=STRING_POR_OMISSAO;
-        this.cidade=STRING_POR_OMISSAO;
-        this.rua=STRING_POR_OMISSAO;
-        this.codigo_postal=STRING_POR_OMISSAO;
+
+    private static final String STRING_POR_OMISSAO = "";
+
+    public Localizacao() {
+        this.pais = STRING_POR_OMISSAO;
+        this.cidade = STRING_POR_OMISSAO;
+        this.rua = STRING_POR_OMISSAO;
+        this.codigo_postal = STRING_POR_OMISSAO;
     }
-    
-    public Localizacao(String pais,String cidade,String rua,String codigo_postal){
-        this.pais=pais;
-        this.cidade=cidade;
-        this.rua=rua;
-        this.codigo_postal=codigo_postal;
+
+    public Localizacao(String pais, String cidade, String rua, String codigo_postal) {
+        this.pais = pais;
+        this.cidade = cidade;
+        this.rua = rua;
+        this.codigo_postal = codigo_postal;
     }
-    
-    public Localizacao(Localizacao localizacao){
-        this.pais=localizacao.pais;
-        this.cidade=localizacao.cidade;
-        this.rua=localizacao.rua;
-        this.codigo_postal=localizacao.codigo_postal;
+
+    public Localizacao(Localizacao localizacao) {
+        this.pais = localizacao.pais;
+        this.cidade = localizacao.cidade;
+        this.rua = localizacao.rua;
+        this.codigo_postal = localizacao.codigo_postal;
     }
 
     public String getPais() {
@@ -71,8 +73,8 @@ public class Localizacao {
     public void setCodigo_postal(String codigo_postal) {
         this.codigo_postal = codigo_postal;
     }
-    
-    public boolean valida(){
+
+    public boolean valida() {
         return true;
     }
 
@@ -80,7 +82,7 @@ public class Localizacao {
     public String toString() {
         return "Localizacao{" + "pais=" + pais + ", cidade=" + cidade + ", rua=" + rua + ", codigo_postal=" + codigo_postal + '}';
     }
-    
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
