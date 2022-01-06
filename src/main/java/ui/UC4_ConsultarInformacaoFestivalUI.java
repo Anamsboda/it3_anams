@@ -11,33 +11,33 @@ import utilitarios.Utils;
 /**
  *
  * @author GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
+ * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
+ * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
  */
 public class UC4_ConsultarInformacaoFestivalUI {
+
     private GestFest empresa;
     private ConsultarInformacaoFestivalController controller;
-    
-    public UC4_ConsultarInformacaoFestivalUI(GestFest empresa){
+
+    public UC4_ConsultarInformacaoFestivalUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new ConsultarInformacaoFestivalController(empresa);
     }
-    
-    public void run(){
+
+    public void run() {
         controller.procurarFestival(introduzDados());
-        
+
         apresentaDados();
     }
-    
-    private String introduzDados(){
+
+    private String introduzDados() {
         String festival = Utils.readLineFromConsole("Introduza o nome do festival: ");
         return festival;
     }
-    
-    private void apresentaDados(){
+
+    private void apresentaDados() {
         System.out.println("\nFestival:\n" + controller.getInformacaoFestivalAsString());
     }
-    
-    
+
 }

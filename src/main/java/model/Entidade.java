@@ -1,40 +1,39 @@
 package model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
+ * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
+ * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
  */
 public class Entidade {
+
     private int referencia;
     private String designacao;
-    private TipoEntidade tipoEntidade;
+    private ArrayList<TipoEntidade> tiposEntidade;
 
     private static int nroEntidade = 0;
     private static final String STRING_POR_OMISSAO = "";
 
-    public Entidade(){
-        this.referencia=nroEntidade++;
-        this.designacao=STRING_POR_OMISSAO;
-        this.tipoEntidade=new TipoEntidade();
+    public Entidade() {
+        this.referencia = nroEntidade++;
+        this.designacao = STRING_POR_OMISSAO;
+        this.tiposEntidade = new ArrayList<TipoEntidade>();
     }
-    /**
-     * 
-     * @param designacao
-     * @param tipo 
-     */
-    public Entidade(String designacao,TipoEntidade tipo){
-        this.referencia=nroEntidade++;
-        this.designacao=designacao;
-        this.tipoEntidade=new TipoEntidade(tipo);
+
+    public Entidade(String designacao) {
+        this.referencia = nroEntidade++;
+        this.designacao = designacao;
+        this.tiposEntidade = new ArrayList<TipoEntidade>();
     }
-    
-    public Entidade(Entidade entidade){
-        this.referencia=nroEntidade++;
-        this.designacao=entidade.designacao;
-        this.tipoEntidade=entidade.tipoEntidade;
+
+    public Entidade(Entidade entidade) {
+        this.referencia = nroEntidade++;
+        this.designacao = entidade.designacao;
+        this.tiposEntidade = entidade.tiposEntidade;
     }
 
     public int getReferencia() {
@@ -45,8 +44,8 @@ public class Entidade {
         return designacao;
     }
 
-    public TipoEntidade getTipoEntidade() {
-        return tipoEntidade;
+    public ArrayList<TipoEntidade> getTipoEntidade() {
+        return tiposEntidade;
     }
 
     public void setReferencia(int referencia) {
@@ -57,18 +56,21 @@ public class Entidade {
         this.designacao = designaçao;
     }
 
-    public void setTipoEntidade(TipoEntidade tipoEntidade) {
-        this.tipoEntidade = tipoEntidade;
+    public void setTipoEntidade(ArrayList<TipoEntidade> tiposEntidade) {
+        this.tiposEntidade = tiposEntidade;
     }
-    
-    public boolean valida(){
+
+    public void adicionaTipoEntidade(TipoEntidade tipoEntidade) {
+        this.tiposEntidade.add(tipoEntidade);
+    }
+
+    public boolean valida() {
         return true;
     }
 
     @Override
     public String toString() {
-        return "Entidade{" + "referencia=" + referencia + ", designação=" + designacao + ", tipoEntidade=" + tipoEntidade + '}';
+        return "Entidade{" + "referencia=" + referencia + ", designação=" + designacao + ", tipoEntidade=" + tiposEntidade + '}';
     }
-    
-    
+
 }

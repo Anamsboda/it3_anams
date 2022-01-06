@@ -13,11 +13,12 @@ import utilitarios.Utils;
 /**
  *
  * @author GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
+ * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
+ * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
  */
 public class UC6_AssociarEntidadeFestivalUI {
+
     private GestFest empresa;
     private AssociarEntidadeFestivalController controller;
     private Festival festival;
@@ -61,4 +62,3 @@ public class UC6_AssociarEntidadeFestivalUI {
 
     }
 }
-

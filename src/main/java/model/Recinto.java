@@ -9,11 +9,12 @@ import java.util.ArrayList;
 /**
  *
  * @author GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
+ * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
+ * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
  */
 public class Recinto {
+
     private int codigoRecinto;
     private String nomeRecinto;
     private Localizacao localizacaoRecinto;
@@ -21,13 +22,13 @@ public class Recinto {
     private int nroPalcos;
     private int lotacaoRecinto;
 
-    private static int nroRecinto=0;
-    
+    private static int nroRecinto = 0;
+
     private static final String STRING_POR_OMISSAO = "";
     private static final int INT_POR_OMISSAO = 0;
 
     public Recinto() {
-        this.codigoRecinto=nroRecinto++;
+        this.codigoRecinto = nroRecinto++;
         this.nomeRecinto = STRING_POR_OMISSAO;
         this.localizacaoRecinto = new Localizacao();
         this.palcosFestival = new ArrayList<Palco>();
@@ -36,7 +37,7 @@ public class Recinto {
     }
 
     public Recinto(String nomeRecinto, Localizacao localizacaoRecinto, int lotacaoRecinto) {
-        this.codigoRecinto=nroRecinto;
+        this.codigoRecinto = nroRecinto;
         this.nomeRecinto = nomeRecinto;
         this.localizacaoRecinto = localizacaoRecinto;
         this.palcosFestival = new ArrayList<Palco>();
@@ -45,15 +46,15 @@ public class Recinto {
     }
 
     public Recinto(Recinto recinto) {
-        this.codigoRecinto=nroRecinto++;
+        this.codigoRecinto = nroRecinto++;
         this.nomeRecinto = recinto.nomeRecinto;
         this.localizacaoRecinto = recinto.localizacaoRecinto;
         this.palcosFestival = recinto.palcosFestival;
         this.nroPalcos = recinto.palcosFestival.size();
         this.lotacaoRecinto = recinto.lotacaoRecinto;
     }
-    
-    public int getCodigoRecinto(){
+
+    public int getCodigoRecinto() {
         return codigoRecinto;
     }
 
@@ -76,9 +77,9 @@ public class Recinto {
     public int getLotacaoRecinto() {
         return lotacaoRecinto;
     }
-    
-    public void setCodigoRecinto(int codigo){
-        this.codigoRecinto=codigo;
+
+    public void setCodigoRecinto(int codigo) {
+        this.codigoRecinto = codigo;
     }
 
     public void setNomeRecinto(String nomeRecinto) {
@@ -100,11 +101,11 @@ public class Recinto {
     public void setLotacaoRecinto(int lotacaoRecinto) {
         this.lotacaoRecinto = lotacaoRecinto;
     }
-    
-    public boolean valida(){
+
+    public boolean valida() {
         return true;
     }
-    
+
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
