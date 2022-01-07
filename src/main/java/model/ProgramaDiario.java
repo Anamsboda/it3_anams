@@ -22,15 +22,15 @@ public class ProgramaDiario {
 
     public ProgramaDiario() {
         this.referencia += contador;
-        this.data = null;
+        this.data = LocalDate.now();
         this.festival = new Festival();
         this.lstAtuacoes = new HashSet<>();
     }
 
     public ProgramaDiario(Festival festival, LocalDate data) {
         this.referencia += contador;
-        this.data = data;
         this.festival = new Festival(festival);
+        this.data = data;
         this.lstAtuacoes = new HashSet<>();
     }
 
