@@ -5,8 +5,10 @@
  */
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import utilitarios.Data;
 import utilitarios.DataHora;
 
@@ -23,9 +25,10 @@ public class Festival {
     private String designacaoFestival;
     private ArrayList<Entidade> entidadeColaboradora;
     private String edicaoFestival;
-    private DataHora dataInicioFestival;
-    private DataHora dataFimFestival;
+    private LocalDate dataInicioFestival;
+    private LocalDate dataFimFestival;
     private Recinto recintoFestival;
+    private HashSet<Palco> palco;
 
     private static int nroFestival = 0;
 
@@ -36,12 +39,13 @@ public class Festival {
         this.designacaoFestival = STRING_POR_OMISSAO;
         this.entidadeColaboradora = new ArrayList<>();
         this.edicaoFestival = STRING_POR_OMISSAO;
-        this.dataInicioFestival = new DataHora();
-        this.dataFimFestival = new DataHora();
+        this.dataInicioFestival = LocalDate.now();
+        this.dataFimFestival = LocalDate.now();
         this.recintoFestival = new Recinto();
+        this.palco = new HashSet<>();
     }
 
-    public Festival(String designacao, String edicao, DataHora dataInicio, DataHora dataFimFestiva, Recinto recinto) {
+    public Festival(String designacao, String edicao, LocalDate dataInicio, LocalDate dataFimFestiva, Recinto recinto, HashSet<Palco> palco) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>();
@@ -49,9 +53,10 @@ public class Festival {
         this.dataInicioFestival = dataInicio;
         this.dataInicioFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
+        this.palco = new HashSet<Palco>(palco);
     }
 
-    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, DataHora dataInicio, DataHora dataFimFestival, Recinto recinto) {
+    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, LocalDate dataInicio, LocalDate dataFimFestival, Recinto recinto, HashSet<Palco> palco) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>(entidadeColaboradora);
@@ -59,6 +64,7 @@ public class Festival {
         this.dataInicioFestival = dataInicio;
         this.dataFimFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
+        this.palco = new HashSet<Palco>(palco);
     }
 
     public Festival(Festival festival) {
@@ -68,6 +74,7 @@ public class Festival {
         this.dataInicioFestival = festival.dataInicioFestival;
         this.dataFimFestival = festival.dataFimFestival;
         this.recintoFestival = new Recinto(festival.recintoFestival);
+        this.palco = new HashSet<Palco>(festival.palco);
     }
 
     public int getReferenciaFestival() {
@@ -86,16 +93,20 @@ public class Festival {
         return edicaoFestival;
     }
 
-    public DataHora getDataInicioFestival() {
+    public LocalDate getDataInicioFestival() {
         return dataInicioFestival;
     }
 
-    public DataHora getDataFimFestival() {
+    public LocalDate getDataFimFestival() {
         return dataFimFestival;
     }
 
     public Recinto getRecintoFestival() {
         return recintoFestival;
+    }
+
+    public HashSet<Palco> getPalco() {
+        return new HashSet<>(palco);
     }
 
     public void setReferenciaFestival(int referenciaFestival) {
@@ -114,16 +125,20 @@ public class Festival {
         this.edicaoFestival = edicaoFestival;
     }
 
-    public void setDataInicioFestival(DataHora dataInicioFestival) {
+    public void setDataInicioFestival(LocalDate dataInicioFestival) {
         this.dataInicioFestival = dataInicioFestival;
     }
 
-    public void setDataFimFestival(DataHora dataFimFestival) {
+    public void setDataFimFestival(LocalDate dataFimFestival) {
         this.dataFimFestival = dataFimFestival;
     }
 
     public void setRecintoFestival(Recinto recintoFestival) {
         this.recintoFestival = recintoFestival;
+    }
+
+    public void setPalco(HashSet<Palco> palco) {
+        this.palco = new HashSet<>(palco);
     }
 
     public boolean valida() {

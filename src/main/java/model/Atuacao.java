@@ -4,8 +4,13 @@
  */
 package model;
 
-import utilitarios.Data;
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
 import utilitarios.DataHora;
+import utilitarios.Utils;
 
 /**
  *
@@ -15,9 +20,9 @@ public class Atuacao {
 
     private int codigo;
     private Artista artista;
-    private DataHora dataInicio;
-    private DataHora dataFim;
-    private int duracao;
+    private LocalDateTime dataInicio;
+    private LocalDateTime dataFim;
+    private Duration duracao;
     private Palco palco;
 
     private static int nroAtuacao = 0;
@@ -26,17 +31,17 @@ public class Atuacao {
     public Atuacao() {
         this.codigo = nroAtuacao++;
         this.artista = new Artista();
-        this.dataInicio = new DataHora();
-        this.dataFim = new DataHora();
-        this.duracao = INT_POR_OMISSAO;
+        this.dataInicio = LocalDateTime.now();
+        this.dataFim = LocalDateTime.now();
+        this.duracao = Duration.ZERO;
         this.palco = new Palco();
     }
 
-    public Atuacao(Artista artista, DataHora dataInicio, DataHora dataFim, int duracao, Palco palco) {
+    public Atuacao(Artista artista, LocalDateTime dataInicio, LocalDateTime dataFim, Duration duracao, Palco palco) {
         this.codigo = nroAtuacao++;
         this.artista = new Artista(artista);
-        this.dataInicio = new DataHora(dataInicio);
-        this.dataFim = new DataHora(dataFim);
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
         this.duracao = duracao;
         this.palco = new Palco(palco);
     }
@@ -58,15 +63,15 @@ public class Atuacao {
         return artista;
     }
 
-    public DataHora getDataInicio() {
+    public LocalDateTime getDataInicio() {
         return dataInicio;
     }
 
-    public DataHora getDataFim() {
+    public LocalDateTime getDataFim() {
         return dataFim;
     }
 
-    public int getDuracao() {
+    public Duration getDuracao() {
         return duracao;
     }
 
@@ -82,15 +87,15 @@ public class Atuacao {
         this.artista = new Artista(artista);
     }
 
-    public void setDataInicio(DataHora dataInicio) {
-        this.dataInicio = new DataHora(dataInicio);
+    public void setDataInicio(LocalDateTime dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public void setDataFim(DataHora dataFim) {
-        this.dataFim = new DataHora(dataFim);
+    public void setDataFim(LocalDateTime dataFim) {
+        this.dataFim = dataFim;
     }
 
-    public void setDuracao(int duracao) {
+    public void setDuracao(Duration duracao) {
         this.duracao = duracao;
     }
 
@@ -107,4 +112,5 @@ public class Atuacao {
         return "Atuacao{" + "codigo=" + codigo + ", artista=" + artista + ", dataInicio=" + dataInicio + ", duracao=" + duracao + ", palco=" + palco + '}';
     }
 
+    
 }

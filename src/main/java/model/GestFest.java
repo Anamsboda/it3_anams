@@ -7,6 +7,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import utilitarios.Utils;
 
 /**
  *
@@ -18,6 +19,7 @@ import java.util.List;
  */
 public class GestFest {
 
+    private final List<Artista> lstArtistas;
     private final List<Festival> lstFestivais;
     private final List<TipoEntidade> lstTiposEntidade;
     private final List<Entidade> lstEntidades;
@@ -29,6 +31,7 @@ public class GestFest {
 
     public GestFest(String designacao) {
         this.designacao = designacao;
+        this.lstArtistas = new ArrayList<>();
         this.lstTiposEntidade = new ArrayList<>();
         this.lstFestivais = new ArrayList<>();
         this.lstEntidades = new ArrayList<>();
@@ -252,6 +255,16 @@ public class GestFest {
         return recinto;
     }
 
+    public Artista procurarArtista(String nome) {
+        Artista artista = new Artista();
+        for (Artista a : lstArtistas) {
+            if (nome.equalsIgnoreCase(a.getNome())) {
+                artista = a;
+            }
+        }
+        return artista;
+    }
+
     public Entidade procurarEntidade(int referencia) {
         for (Entidade e : lstEntidades) {
             if (e.getReferencia() == referencia) {
@@ -268,5 +281,6 @@ public class GestFest {
         }
         return festivaisString;
     }
+
     // Completar com outras funcionalidades
 }
