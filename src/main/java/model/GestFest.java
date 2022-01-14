@@ -282,5 +282,12 @@ public class GestFest {
         return festivaisString;
     }
 
+    public String getTiposBilheteAsString(){
+        String TipoBilheteString = "N.D.";
+        for (TipoBilhete tb : lstTiposBilhete){
+            TipoBilheteString += tb.toString();
+        }
+        return TipoBilheteString;
+    }
     // Completar com outras funcionalidades
 }

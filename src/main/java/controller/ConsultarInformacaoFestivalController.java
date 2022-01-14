@@ -24,7 +24,7 @@ public class ConsultarInformacaoFestivalController {
     }
 
     public void procurarFestival(String festival) {
-        this.festival = empresa.procurarFestival(festival);
+        this.festival = empresa.procurarFestivalDesgn(festival);
     }
 
     public String getInformacaoFestivalAsString() {

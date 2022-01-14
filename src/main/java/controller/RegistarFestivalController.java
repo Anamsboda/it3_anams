@@ -4,13 +4,10 @@
  */
 package controller;
 
-import java.util.Date;
+import java.time.LocalDate;
 import model.Festival;
 import model.GestFest;
 import model.Recinto;
-import utilitarios.Data;
-import utilitarios.DataHora;
-
 /**
  *
  * @author GRUPO 10
@@ -39,7 +36,7 @@ public class RegistarFestivalController {
         return this.festival.getEdicaoFestival();
     }
 
-    public DataHora getDataInicioFestival() {
+    public LocalDate getDataInicioFestival() {
         return this.festival.getDataInicioFestival();
     }
 
@@ -55,7 +52,7 @@ public class RegistarFestivalController {
         this.festival.setEdicaoFestival(edicao);
     }
 
-    public void setDataInicioFestival(DataHora dataInicio) {
+    public void setDataInicioFestival(LocalDate dataInicio) {
         this.festival.setDataInicioFestival(dataInicio);
     }
 

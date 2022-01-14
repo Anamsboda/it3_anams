@@ -88,7 +88,7 @@ public class UC9_DefinirProgramacaoFestival {
     }
 
     public Palco inserirPalco() {
-        List<Palco> palcos = new ArrayList<Palco>(controller.getFestival().getPalco());
+        List<Palco> palcos = new ArrayList<Palco>(controller.getFestival().getRecintoFestival().getPalcosFestival());
         for (Palco p : palcos) {
             System.out.println(p);
         }

@@ -29,7 +29,7 @@ public class AssociarEntidadeFestivalController {
     }
 
     public void consultaFestival(String festival) {
-        this.festival = gestfest.procurarFestival(festival);
+        this.festival = gestfest.procurarFestivalDesgn(festival);
     }
 
     public void consultaEntidade(int referencia) {
