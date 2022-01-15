@@ -2,11 +2,9 @@ package model;
 
 /**
  *
- * @author GRUPO 10
- *         @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- *         @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- *         @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
+
 public class Palco {
     private String nomePalco;
     private int lotacaoPalco;

@@ -1,19 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
  *
- * GRUPO 10
- *
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * <@!774356880800743434> PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @actor grupo10
  */
-public class Localizacao {
 
+public class Localizacao {
     private String pais;
     private String cidade;
     private String rua;

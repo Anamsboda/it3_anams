@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.RegistarEntidadeController;
@@ -12,17 +8,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class UC2_RegistarEntidadeUI {
+
+public class UC02_RegistarEntidadeUI {
 
     private GestFest empresa;
     private RegistarEntidadeController controller;
 
-    public UC2_RegistarEntidadeUI(GestFest empresa) {
+    public UC02_RegistarEntidadeUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new RegistarEntidadeController(empresa);
     }

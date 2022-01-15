@@ -1,20 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.util.ArrayList;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class Recinto {
 
+public class Recinto {
     private int codigoRecinto;
     private String nomeRecinto;
     private Localizacao localizacaoRecinto;

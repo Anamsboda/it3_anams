@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.ComprarBilheteController;
@@ -11,14 +7,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author andre
+ * @author grupo12
  */
-public class UC12_ComprarBilhete {
+
+public class UC12_ComprarBilheteUI {
     private GestFest empresa;
     private Compra compra;
     private ComprarBilheteController controller;
     
-    public UC12_ComprarBilhete(GestFest empresa){
+    public UC12_ComprarBilheteUI(GestFest empresa){
         this.empresa = empresa;
         controller = new ComprarBilheteController(empresa);
     }

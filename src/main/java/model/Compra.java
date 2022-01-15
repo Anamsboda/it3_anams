@@ -1,17 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.time.LocalDate;
 
 /**
  *
- * @author andre
+ * @author grupox
  */
-public class Compra {
 
+public class Compra {
     private int referencia;
     private Festival festival;
     private TipoBilhete tipoBilhete;
@@ -131,5 +127,4 @@ public class Compra {
     public String toString() {
         return "Compra{" + "referencia=" + referencia + ", festival=" + festival + ", tipoBilhete=" + tipoBilhete + ", quantidade=" + quantidade + ", nome=" + nome + ", NIF=" + NIF + ", email=" + email + ", dataCompra=" + dataCompra + ", contador=" + contador + '}';
     }
-
 }

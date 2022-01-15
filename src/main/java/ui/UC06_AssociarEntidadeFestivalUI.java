@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.AssociarEntidadeFestivalController;
@@ -12,19 +8,17 @@ import utilitarios.Utils;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class UC6_AssociarEntidadeFestivalUI {
+
+public class UC06_AssociarEntidadeFestivalUI {
 
     private GestFest empresa;
     private AssociarEntidadeFestivalController controller;
     private Festival festival;
     private Entidade entidade;
 
-    UC6_AssociarEntidadeFestivalUI(GestFest empresa) {
+    UC06_AssociarEntidadeFestivalUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new AssociarEntidadeFestivalController(empresa);
     }

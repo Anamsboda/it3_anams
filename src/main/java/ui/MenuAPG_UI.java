@@ -4,13 +4,12 @@ import java.io.IOException;
 import model.GestFest;
 import utilitarios.Utils;
 
-
 /**
  *
- * Dulce Mota <mdm@isep.ipp.pt>
+ * @actor grupox
  */
-public class MenuAPG_UI {
 
+public class MenuAPG_UI {
     private GestFest empresa;
     private String opcao;
 
@@ -30,22 +29,18 @@ public class MenuAPG_UI {
             opcao = Utils.readLineFromConsole("Introduza opção: ");
 
             if (opcao.equals("1")) {
-                UC1_EspecificarTipoEntidadeUI ui = new UC1_EspecificarTipoEntidadeUI(empresa);
+                UC01_EspecificarTipoEntidadeUI ui = new UC01_EspecificarTipoEntidadeUI(empresa);
+                ui.run();
+            }else if (opcao.equals("2")) {
+                UC02_RegistarEntidadeUI ui = new UC02_RegistarEntidadeUI(empresa);
+                ui.run();
+            }else if (opcao.equals("3")) {
+                UC03_EspecificarTipoBilheteUI ui = new UC03_EspecificarTipoBilheteUI(empresa);
+                ui.run();
+            }else if (opcao.equals("4")) {
+                UC04_ConsultarInformacaoFestivalUI ui = new UC04_ConsultarInformacaoFestivalUI(empresa);
                 ui.run();
             }
-            if (opcao.equals("2")) {
-                UC2_RegistarEntidadeUI ui = new UC2_RegistarEntidadeUI(empresa);
-                ui.run();
-            }
-            if (opcao.equals("3")) {
-                UC3_EspecificarTipoBilheteUI ui = new UC3_EspecificarTipoBilheteUI(empresa);
-                ui.run();
-            }
-            if (opcao.equals("4")) {
-                UC4_ConsultarInformacaoFestivalUI ui = new UC4_ConsultarInformacaoFestivalUI(empresa);
-                ui.run();
-            }
-
         } while (!opcao.equals("0"));
     }
 }

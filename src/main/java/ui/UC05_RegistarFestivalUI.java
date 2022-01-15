@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.RegistarFestivalController;
@@ -12,17 +8,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class UC5_RegistarFestivalUI {
+
+public class UC05_RegistarFestivalUI {
 
     private GestFest empresa;
     private RegistarFestivalController controller;
 
-    public UC5_RegistarFestivalUI(GestFest empresa) {
+    public UC05_RegistarFestivalUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new RegistarFestivalController(empresa);
     }
@@ -57,5 +51,4 @@ public class UC5_RegistarFestivalUI {
     private void apresentaDados() {
         System.out.println("\nFestival:\n" + controller.getFestivalAsString());
     }
-
 }

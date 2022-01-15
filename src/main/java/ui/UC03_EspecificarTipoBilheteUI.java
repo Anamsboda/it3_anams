@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.EspecificarTipoBilheteController;
@@ -10,17 +6,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class UC3_EspecificarTipoBilheteUI {
+
+public class UC03_EspecificarTipoBilheteUI {
 
     private GestFest empresa;
     private EspecificarTipoBilheteController controller;
 
-    public UC3_EspecificarTipoBilheteUI(GestFest empresa) {
+    public UC03_EspecificarTipoBilheteUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new EspecificarTipoBilheteController(empresa);
     }

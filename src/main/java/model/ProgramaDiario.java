@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.time.LocalDate;
@@ -9,10 +5,10 @@ import java.util.HashSet;
 
 /**
  *
- * @author andre
+ * @author grupo10
  */
-public class ProgramaDiario {
 
+public class ProgramaDiario {
     private int referencia;
     private Festival festival;
     private LocalDate data;
@@ -80,5 +76,4 @@ public class ProgramaDiario {
     public String toString() {
         return "ProgramaDiario{" + "referencia=" + referencia + ", festival=" + festival + ", data=" + data + ", lstAtuacoes=" + lstAtuacoes + '}';
     }
-
 }

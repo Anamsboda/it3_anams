@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import controller.ConsultarInformacaoFestivalController;
@@ -10,17 +6,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class UC4_ConsultarInformacaoFestivalUI {
+
+public class UC04_ConsultarInformacaoFestivalUI {
 
     private GestFest empresa;
     private ConsultarInformacaoFestivalController controller;
 
-    public UC4_ConsultarInformacaoFestivalUI(GestFest empresa) {
+    public UC04_ConsultarInformacaoFestivalUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new ConsultarInformacaoFestivalController(empresa);
     }
@@ -39,5 +33,4 @@ public class UC4_ConsultarInformacaoFestivalUI {
     private void apresentaDados() {
         System.out.println("\nFestival:\n" + controller.getInformacaoFestivalAsString());
     }
-
 }

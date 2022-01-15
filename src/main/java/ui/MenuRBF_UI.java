@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import java.io.IOException;
@@ -10,8 +6,9 @@ import utilitarios.Utils;
 
 /**
  *
- * @author andre
+ * @author grupox
  */
+
 public class MenuRBF_UI {
 
     private GestFest empresa;
@@ -39,7 +36,5 @@ public class MenuRBF_UI {
                 ui.run();
             }
         }while(!opcao.equals("0"));
-    
-    
     }
 }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.time.LocalDate;
@@ -11,8 +7,9 @@ import java.util.List;
 
 /**
  *
- * @author andre
+ * @author grupo10
  */
+
 public class ProgramacaoFestival {
 
     private int referencia;
@@ -75,5 +72,4 @@ public class ProgramacaoFestival {
     public String toString() {
         return "ProgramacaoFestival{" + "referencia=" + referencia + ", festival=" + festival + ", programadia=" + programadia + '}';
     }
-
 }

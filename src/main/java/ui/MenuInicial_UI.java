@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui;
 
 import java.io.IOException;
@@ -11,10 +6,10 @@ import utilitarios.Utils;
 
 /**
  *
- * @actor hugoqueiroz
+ * @actor grupox
  */
-public class MenuInicial_UI {
 
+public class MenuInicial_UI {
     private GestFest empresa;
     private String opcao;
 
@@ -36,17 +31,16 @@ public class MenuInicial_UI {
             if (opcao.equals("1")) {
                 MenuAPG_UI ui = new MenuAPG_UI(empresa);
                 ui.run();
-            } else if (opcao.equals("2")) {
+            }else if (opcao.equals("2")) {
                 MenuRIF_UI ui = new MenuRIF_UI(empresa);
                 ui.run();
-            } else if (opcao.equals("3")) {
+            }else if (opcao.equals("3")) {
                 MenuRPF_UI ui = new MenuRPF_UI(empresa);
                 ui.run();
             }else if(opcao.equals("4")){
                 MenuRBF_UI ui = new MenuRBF_UI(empresa);
                 ui.run();
             }
-
         } while (!opcao.equals("0"));
     }
 }

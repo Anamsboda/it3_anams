@@ -1,23 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 import java.time.Duration;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-
-import utilitarios.DataHora;
-import utilitarios.Utils;
 
 /**
  *
- * @author danie
+ * @author grupox
  */
-public class Atuacao {
 
+public class Atuacao {
     private int codigo;
     private Artista artista;
     private LocalDateTime dataInicio;
@@ -111,6 +103,4 @@ public class Atuacao {
     public String toString() {
         return "Atuacao{" + "codigo=" + codigo + ", artista=" + artista + ", dataInicio=" + dataInicio + ", duracao=" + duracao + ", palco=" + palco + '}';
     }
-
-    
 }

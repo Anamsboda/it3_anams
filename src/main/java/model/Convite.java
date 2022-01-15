@@ -1,17 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import utilitarios.DataHora;
 
 /**
  *
- * @author danie
+ * @author grupox
  */
-public class Convite {
 
+public class Convite {
     public enum Estado {
         sem_resposta, aceite, rejeitado, anulado
     }
@@ -109,5 +105,4 @@ public class Convite {
     public String toString() {
         return "Convite{" + "codigo=" + codigo + ", artista=" + artista + ", email=" + email + ", dataConvite=" + dataConvite + ", dataLimite=" + dataLimite + ", estado=" + estado + '}';
     }
-
 }

@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
  *
- * GRUPO 10
- *
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class TipoEntidade {
 
+public class TipoEntidade {
     private String designacao;
 
     private static final String DESIGN_POR_OMISSAO = "sem designação";
@@ -50,5 +41,4 @@ public class TipoEntidade {
         sb.append("Designação: " + designacao + "\n");
         return sb.toString();
     }
-
 }

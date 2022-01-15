@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import java.io.IOException;
@@ -10,10 +6,10 @@ import utilitarios.Utils;
 
 /**
  *
- * @author andre
+ * @author grupox
  */
-public class MenuRPF_UI {
 
+public class MenuRPF_UI {
     private GestFest empresa;
     private String opcao;
 
@@ -36,7 +32,7 @@ public class MenuRPF_UI {
                 UC07_ConvidarArtistaBandaUI ui = new UC07_ConvidarArtistaBandaUI(empresa);
                 ui.run();
             } else if (opcao.equals("2")) {
-                UC08_AlterarEstadoArtistaBandaUI ui = new UC08_AlterarArtistaBanda(empresa);
+                UC08_AlterarEstadoArtistaBandaUI ui = new UC08_AlterarEstadoArtistaBandaUI(empresa);
                 ui.run();
             } else if (opcao.equals("3")) {
                 UC09_DefinirProgramacaoFestivalUI ui = new UC09_DefinirProgramacaoFestivalUI(empresa);

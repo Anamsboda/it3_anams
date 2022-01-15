@@ -4,13 +4,10 @@ import java.util.ArrayList;
 
 /**
  *
- * @author GRUPO 10
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @author grupo10
  */
-public class Entidade {
 
+public class Entidade {
     private int referencia;
     private String designacao;
     private ArrayList<TipoEntidade> tiposEntidade;
@@ -72,5 +69,4 @@ public class Entidade {
     public String toString() {
         return "Entidade{" + "referencia=" + referencia + ", designação=" + designacao + ", tipoEntidade=" + tiposEntidade + '}';
     }
-
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ui;
 
 import java.io.IOException;
@@ -11,10 +6,10 @@ import utilitarios.Utils;
 
 /**
  *
- * Dulce Mota <mdm@isep.ipp.pt>
+ * @actor grupox
  */
-public class MenuRIF_UI {
 
+public class MenuRIF_UI {
     private GestFest empresa;
     private String opcao;
 
@@ -35,25 +30,21 @@ public class MenuRIF_UI {
             opcao = Utils.readLineFromConsole("Introduza opção: ");
 
             if (opcao.equals("1")) {
-                UC4_ConsultarInformacaoFestivalUI ui = new UC4_ConsultarInformacaoFestivalUI(empresa);
-
+                UC04_ConsultarInformacaoFestivalUI ui = new UC04_ConsultarInformacaoFestivalUI(empresa);
                 ui.run();
             } else if (opcao.equals("2")) {
-                UC5_RegistarFestivalUI ui = new UC5_RegistarFestivalUI(empresa);
+                UC05_RegistarFestivalUI ui = new UC05_RegistarFestivalUI(empresa);
                 ui.run();
             } else if (opcao.equals("3")) {
-                UC6_AssociarEntidadeFestivalUI ui = new UC6_AssociarEntidadeFestivalUI(empresa);
+                UC06_AssociarEntidadeFestivalUI ui = new UC06_AssociarEntidadeFestivalUI(empresa);
                 ui.run();
             } else if (opcao.equals("4")) {
-                UC10_ConsultarProgramacaoFestivaoUI ui = new UC10_ConsultarProgramacaoFestivalUI(empresa);
+                UC10_ConsultarProgramacaoFestivalUI ui = new UC10_ConsultarProgramacaoFestivalUI(empresa);
                 ui.run();
             } else if (opcao.equals("5")) {
                 UC12_ComprarBilheteUI ui = new UC12_ComprarBilheteUI(empresa);
                 ui.run();
-                // falta opcoes?
             }
-
         } while (!opcao.equals("0"));
-
     }
 }

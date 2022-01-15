@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import java.time.LocalDate;
@@ -10,13 +6,12 @@ import model.Festival;
 import model.GestFest;
 import model.ProgramaDiario;
 import model.ProgramacaoFestival;
-import utilitarios.DataHora;
-import utilitarios.Utils;
 
 /**
  *
- * @author andre
+ * @author grupo10
  */
+
 public class DefinirProgramacaoFestivalController {
 
     private GestFest empresa;
@@ -66,7 +61,5 @@ public class DefinirProgramacaoFestivalController {
 
     public Artista ProcurarArtista(String artista) {
          return empresa.procurarArtista(artista);
-    }
-
-    
+    }   
 }

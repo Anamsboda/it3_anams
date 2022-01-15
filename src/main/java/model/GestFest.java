@@ -1,24 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.util.ArrayList;
 import java.util.List;
-import utilitarios.Utils;
 
 /**
  *
- * GRUPO 10
- *
- * @ANDRÉ FILIPE VALÉRIO CONCEIÇÃO (1200807) --->TURMA 2DA
- * @DANIEL ALEXANDRE RIBEIRO GRAÇA (1201822) --->TURMA 2DA
- * @RAFAEL PEREIRA MARTINS (1200698) --->TURMA 2DA
+ * @actor grupo10
  */
-public class GestFest {
 
+public class GestFest {
     private final List<Artista> lstArtistas;
     private final List<Festival> lstFestivais;
     private final List<TipoEntidade> lstTiposEntidade;
@@ -289,5 +279,4 @@ public class GestFest {
         }
         return TipoBilheteString;
     }
-    // Completar com outras funcionalidades
 }

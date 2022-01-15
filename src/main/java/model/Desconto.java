@@ -1,15 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 /**
  *
- * @author danie
+ * @author grupox
  */
-public class Desconto {
 
+public class Desconto {
     private int codigo;
     private String sigla;
     private String descricao;
@@ -92,5 +88,4 @@ public class Desconto {
     public String toString() {
         return "Desconto{" + "codigo=" + codigo + ", sigla=" + sigla + ", descricao=" + descricao + ", valorDesconto=" + valorDesconto + ", nroMinPessoas=" + nroMinPessoas + '}';
     }
-
 }

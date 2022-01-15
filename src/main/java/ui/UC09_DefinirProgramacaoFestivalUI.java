@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ui;
 
 import java.time.*;
@@ -22,15 +18,15 @@ import utilitarios.Utils;
 
 /**
  *
- * @author andre
+ * @author grupo10
  */
-public class UC9_DefinirProgramacaoFestival {
 
+public class UC09_DefinirProgramacaoFestivalUI {
     private GestFest empresa;
     private Festival festival;
     private DefinirProgramacaoFestivalController controller;
 
-    public UC9_DefinirProgramacaoFestival(GestFest empresa) {
+    public UC09_DefinirProgramacaoFestivalUI(GestFest empresa) {
         this.empresa = empresa;
         controller = new DefinirProgramacaoFestivalController(empresa);
     }
