@@ -1,5 +1,6 @@
 package model;
 
+import Interface.IDescontavel;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +8,8 @@ import java.util.List;
  *
  * @actor grupo10
  */
-
 public class GestFest {
+
     private final List<Artista> lstArtistas;
     private final List<Festival> lstFestivais;
     private final List<TipoEntidade> lstTiposEntidade;
@@ -18,6 +19,8 @@ public class GestFest {
     private final List<Localizacao> lstLocalizacoes;
     private final List<Palco> lstPalcos;
     private String designacao;
+    private List<Compra> arrVB;
+    private List<IDescontavel> arrDescontos;
 
     public GestFest(String designacao) {
         this.designacao = designacao;
@@ -29,6 +32,9 @@ public class GestFest {
         this.lstRecintos = new ArrayList<>();
         this.lstLocalizacoes = new ArrayList<>();
         this.lstPalcos = new ArrayList<>();
+        adicionarDescontoFamilia();
+        adicionarDescontoGrupo();
+        arrVB = new ArrayList<Compra>();
     }
 
     private boolean adicionaTipoEntidade(TipoEntidade tipo) {
@@ -57,6 +63,16 @@ public class GestFest {
 
     private boolean adicionaPalco(Palco palco) {
         return lstPalcos.add(palco);
+    }
+
+    private void adicionarDescontoFamilia() {
+        IDescontavel desc = DescontoFamilia.getinstance();
+        arrDescontos.add(desc);
+    }
+
+    private void adicionarDescontoGrupo() {
+        IDescontavel desc = DescontoGrupo.getinstance();
+        arrDescontos.add(desc);
     }
 
     public List<TipoEntidade> getListaTipoEntidades() {
@@ -272,9 +288,9 @@ public class GestFest {
         return festivaisString;
     }
 
-    public String getTiposBilheteAsString(){
+    public String getTiposBilheteAsString() {
         String TipoBilheteString = "N.D.";
-        for (TipoBilhete tb : lstTiposBilhete){
+        for (TipoBilhete tb : lstTiposBilhete) {
             TipoBilheteString += tb.toString();
         }
         return TipoBilheteString;

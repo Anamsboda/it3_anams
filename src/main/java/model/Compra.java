@@ -1,22 +1,24 @@
 package model;
 
+import Interface.IDescontavel;
 import java.time.LocalDate;
 
 /**
  *
  * @author grupox
  */
-
 public class Compra {
+
     private int referencia;
     private Festival festival;
     private TipoBilhete tipoBilhete;
     private int quantidade;
-    private String nome;
-    private int NIF;
+    private IDescontavel desconto;
     private String email;
     private LocalDate dataCompra;
+    private float custo;
 
+    private static final float FLT_DEFAULT = 0;
     private static final int INT_DEFAULT = 0;
     private static final String STR_DEFAULT = "N.D.";
 
@@ -27,21 +29,21 @@ public class Compra {
         this.festival = new Festival();
         this.tipoBilhete = new TipoBilhete();
         this.quantidade = INT_DEFAULT;
-        this.nome = STR_DEFAULT;
-        this.NIF = INT_DEFAULT;
+        this.desconto = ;
         this.email = STR_DEFAULT;
         this.dataCompra = LocalDate.now();
+        this.custo = FLT_DEFAULT;
     }
 
-    public Compra(Festival festival, TipoBilhete tipoBilhete, int quantidade, String nome, int NIF, String email, LocalDate dataCompra) {
+    public Compra(Festival festival, TipoBilhete tipoBilhete, IDescontavel desconto, int quantidade, String nome, int NIF, String email, LocalDate dataCompra, float custo) {
         this.referencia += contador;
         this.festival = new Festival(festival);
         this.tipoBilhete = new TipoBilhete(tipoBilhete);
         this.quantidade = quantidade;
-        this.nome = nome;
-        this.NIF = NIF;
+        this.desconto = new IDescontavel(desconto);
         this.email = email;
         this.dataCompra = LocalDate.now();
+        this.custo = custo;
     }
 
     public Compra(Compra c) {
@@ -49,10 +51,10 @@ public class Compra {
         this.festival = c.festival;
         this.tipoBilhete = c.tipoBilhete;
         this.quantidade = c.quantidade;
-        this.nome = c.nome;
-        this.NIF = c.NIF;
+        this.desconto = c.desconto;
         this.email = c.email;
         this.dataCompra = c.dataCompra;
+        this.custo = c.custo;
     }
 
     public int getReferencia() {
@@ -75,20 +77,20 @@ public class Compra {
         return email;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public int getNIF() {
-        return NIF;
-    }
-
     public LocalDate getDataCompra() {
         return dataCompra;
     }
 
     public int getContador() {
         return contador;
+    }
+
+    public IDescontavel getDesconto() {
+        return desconto;
+    }
+
+    public float getCusto() {
+        return custo;
     }
 
     public void setReferencia(int referencia) {
@@ -115,16 +117,17 @@ public class Compra {
         this.dataCompra = dataCompra;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDesconto(IDescontavel desconto) {
+        this.desconto = desconto;
     }
 
-    public void setNIF(int NIF) {
-        this.NIF = NIF;
+    public void setCusto(float custo) {
+        this.custo = custo;
     }
 
     @Override
     public String toString() {
-        return "Compra{" + "referencia=" + referencia + ", festival=" + festival + ", tipoBilhete=" + tipoBilhete + ", quantidade=" + quantidade + ", nome=" + nome + ", NIF=" + NIF + ", email=" + email + ", dataCompra=" + dataCompra + ", contador=" + contador + '}';
+        return "Compra{" + "referencia=" + referencia + ", festival=" + festival + ", tipoBilhete=" + tipoBilhete + ", quantidade=" + quantidade + ", desconto=" + desconto + ", email=" + email + ", dataCompra=" + dataCompra + ", custo=" + custo + ", contador=" + contador + '}';
     }
+
 }
