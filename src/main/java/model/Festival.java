@@ -8,8 +8,8 @@ import java.util.HashSet;
  *
  * @author grupo10
  */
-
 public class Festival {
+
     private int referenciaFestival;
     private String designacaoFestival;
     private ArrayList<Entidade> entidadeColaboradora;
@@ -18,6 +18,7 @@ public class Festival {
     private LocalDate dataFimFestival;
     private Recinto recintoFestival;
     private HashSet<Palco> palco;
+    private TipoBilhete tipoBilhete;
 
     private static int nroFestival = 0;
 
@@ -32,9 +33,10 @@ public class Festival {
         this.dataFimFestival = LocalDate.now();
         this.recintoFestival = new Recinto();
         this.palco = new HashSet<>();
+        this.tipoBilhete = new TipoBilhete();
     }
 
-    public Festival(String designacao, String edicao, LocalDate dataInicio, LocalDate dataFimFestiva, Recinto recinto, HashSet<Palco> palco) {
+    public Festival(String designacao, String edicao, LocalDate dataInicio, LocalDate dataFimFestiva, Recinto recinto, HashSet<Palco> palco, TipoBilhete tipoBilhete) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>();
@@ -43,9 +45,10 @@ public class Festival {
         this.dataInicioFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
         this.palco = new HashSet<Palco>(palco);
+        this.tipoBilhete = new TipoBilhete(tipoBilhete);
     }
 
-    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, LocalDate dataInicio, LocalDate dataFimFestival, Recinto recinto, HashSet<Palco> palco) {
+    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, LocalDate dataInicio, LocalDate dataFimFestival, Recinto recinto, HashSet<Palco> palco, TipoBilhete tipoBilhete) {
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>(entidadeColaboradora);
@@ -54,6 +57,7 @@ public class Festival {
         this.dataFimFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
         this.palco = new HashSet<Palco>(palco);
+        this.tipoBilhete = new TipoBilhete(tipoBilhete);
     }
 
     public Festival(Festival festival) {
@@ -62,8 +66,9 @@ public class Festival {
         this.edicaoFestival = festival.edicaoFestival;
         this.dataInicioFestival = festival.dataInicioFestival;
         this.dataFimFestival = festival.dataFimFestival;
-        this.recintoFestival = new Recinto(festival.recintoFestival);
-        this.palco = new HashSet<Palco>(festival.palco);
+        this.recintoFestival = festival.recintoFestival;
+        this.palco = festival.palco;
+        this.tipoBilhete = festival.tipoBilhete;
     }
 
     public int getReferenciaFestival() {
@@ -92,6 +97,10 @@ public class Festival {
 
     public Recinto getRecintoFestival() {
         return recintoFestival;
+    }
+
+    public TipoBilhete getTipoBilhete() {
+        return tipoBilhete;
     }
 
     public HashSet<Palco> getPalco() {
@@ -132,6 +141,10 @@ public class Festival {
 
     public boolean valida() {
         return true;
+    }
+
+    public void setTipoBilhete(TipoBilhete tipoBilhete) {
+        this.tipoBilhete = tipoBilhete;
     }
 
     @Override
