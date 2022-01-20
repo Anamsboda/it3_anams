@@ -43,7 +43,6 @@ public final class DescontoFamilia implements IDescontavel {
 
     @Override
     public float obterDesconto(int qtd) {
-        //int qtd = Utils.IntFromConsole("Introduza o número de bilhetes");
         if (qtd >= MINIMOPESSOAS) {
             return this.perc;
         }

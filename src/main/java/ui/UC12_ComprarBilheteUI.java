@@ -27,10 +27,7 @@ public class UC12_ComprarBilheteUI {
 
         controller.novaCompra();
         controller.procurarFestival(introduzFestival());
-        ArrayList<TipoBilhete> tipoBilhete = controller.getTipoBilhetes();
-        for (TipoBilhete tp : tipoBilhete) {
-            System.out.println(tp);
-        }
+        String tipoBilhete = controller.getTipoBilhetes();
 
         controller.setTipoBilhete(introduzTipoBilhete(tipoBilhete.length()));
 

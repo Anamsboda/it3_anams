@@ -13,7 +13,7 @@ public class Compra {
     private Festival festival;
     private TipoBilhete tipoBilhete;
     private int quantidade;
-    private IDescontavel desconto;
+    private float desconto;
     private String email;
     private LocalDate dataCompra;
     private float custo;
@@ -29,18 +29,16 @@ public class Compra {
         this.festival = new Festival();
         this.tipoBilhete = new TipoBilhete();
         this.quantidade = INT_DEFAULT;
-        this.desconto = ;
         this.email = STR_DEFAULT;
         this.dataCompra = LocalDate.now();
         this.custo = FLT_DEFAULT;
     }
 
-    public Compra(Festival festival, TipoBilhete tipoBilhete, IDescontavel desconto, int quantidade, String nome, int NIF, String email, LocalDate dataCompra, float custo) {
+    public Compra(Festival festival, TipoBilhete tipoBilhete, int quantidade, String nome, int NIF, String email, LocalDate dataCompra, float custo) {
         this.referencia += contador;
         this.festival = new Festival(festival);
         this.tipoBilhete = new TipoBilhete(tipoBilhete);
         this.quantidade = quantidade;
-        this.desconto = new IDescontavel(desconto);
         this.email = email;
         this.dataCompra = LocalDate.now();
         this.custo = custo;
@@ -51,7 +49,6 @@ public class Compra {
         this.festival = c.festival;
         this.tipoBilhete = c.tipoBilhete;
         this.quantidade = c.quantidade;
-        this.desconto = c.desconto;
         this.email = c.email;
         this.dataCompra = c.dataCompra;
         this.custo = c.custo;
@@ -85,10 +82,6 @@ public class Compra {
         return contador;
     }
 
-    public IDescontavel getDesconto() {
-        return desconto;
-    }
-
     public float getCusto() {
         return custo;
     }
@@ -116,11 +109,7 @@ public class Compra {
     public void setDataCompra(LocalDate dataCompra) {
         this.dataCompra = dataCompra;
     }
-
-    public void setDesconto(IDescontavel desconto) {
-        this.desconto = desconto;
-    }
-
+    
     public void setCusto(float custo) {
         this.custo = custo;
     }

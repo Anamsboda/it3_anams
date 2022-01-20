@@ -42,7 +42,6 @@ public class DescontoGrupo implements IDescontavel{
     }
 
     public float obterDesconto(int qtd) {
-        //int qtd = Utils.IntFromConsole("Introduza o número de bilhetes");
         if (qtd >= MINIMOPESSOAS) {
             return this.perc;
         }
