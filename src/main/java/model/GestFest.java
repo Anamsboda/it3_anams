@@ -119,78 +119,58 @@ public class GestFest {
     public boolean valida(TipoEntidade tipo) {
         boolean bRet = false;
         if (tipo.valida()) {
-            // Escrever aqui o código de validação
 
-            //
             bRet = true;
         }
         return bRet;
     }
 
     public boolean valida(Festival festival) {
-        boolean bRet = false;
         if (festival.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean valida(Entidade entidade) {
-        boolean bRet = false;
         if (entidade.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean valida(TipoBilhete tipoBilhete) {
-        boolean bRet = false;
         if (tipoBilhete.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean valida(Recinto recinto) {
-        boolean bRet = false;
         if (recinto.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean valida(Localizacao localizacao) {
-        boolean bRet = false;
         if (localizacao.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean valida(Palco palco) {
-        boolean bRet = false;
         if (palco.valida()) {
-            // Escrever aqui o código de validação
 
-            //
-            bRet = true;
+            return true;
         }
-        return bRet;
+        return false;
     }
 
     public boolean registaTipoEntidade(TipoEntidade tipo) {
@@ -242,9 +222,18 @@ public class GestFest {
         return false;
     }
 
-    public Festival procurarFestivalDesgn(String festival) {
+    public Festival procurarFestivalRef(int referencia) {
         for (Festival f : lstFestivais) {
-            if (f.getDesignacaoFestival().equals(festival)) {
+            if (f.getReferenciaFestival() == referencia) {
+                return f;
+            }
+        }
+        return null;
+    }
+
+    public Festival procurarFestivalDesgn(String designacao) {
+        for (Festival f : lstFestivais) {
+            if (f.getDesignacaoFestival().equals(designacao)) {
                 return f;
             }
         }
@@ -294,5 +283,9 @@ public class GestFest {
             TipoBilheteString += tb.toString();
         }
         return TipoBilheteString;
+    }
+
+    public List<TipoBilhete> getListaTipoBilhete() {
+        return this.lstTiposBilhete;
     }
 }

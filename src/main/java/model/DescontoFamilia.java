@@ -46,7 +46,7 @@ public final class DescontoFamilia implements IDescontavel {
         if (qtd >= MINIMOPESSOAS) {
             return this.perc;
         }
-        return 0;
+        return 0f;
     }
 
 }

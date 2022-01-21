@@ -1,15 +1,19 @@
 package model;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import static java.time.temporal.ChronoUnit.DAYS;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  *
  * @author grupo10
  */
-public class Festival {
 
+public class Festival {
     private int referenciaFestival;
     private String designacaoFestival;
     private ArrayList<Entidade> entidadeColaboradora;
@@ -17,14 +21,15 @@ public class Festival {
     private LocalDate dataInicioFestival;
     private LocalDate dataFimFestival;
     private Recinto recintoFestival;
-    private HashSet<Palco> palco;
-    private TipoBilhete tipoBilhete;
+    private List<Convite> lstConvites;
+    private Bilhetica bilhetica;
+    
 
-    private static int nroFestival = 0;
+    private static int nroFestival=0;
 
-    private static final String STRING_POR_OMISSAO = "";
+    private static final String STRING_POR_OMISSAO="";
 
-    public Festival() {
+    public Festival(){
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = STRING_POR_OMISSAO;
         this.entidadeColaboradora = new ArrayList<>();
@@ -32,43 +37,47 @@ public class Festival {
         this.dataInicioFestival = LocalDate.now();
         this.dataFimFestival = LocalDate.now();
         this.recintoFestival = new Recinto();
-        this.palco = new HashSet<>();
-        this.tipoBilhete = new TipoBilhete();
+        this.lstConvites = new ArrayList<>();
     }
 
-    public Festival(String designacao, String edicao, LocalDate dataInicio, LocalDate dataFimFestiva, Recinto recinto, HashSet<Palco> palco, TipoBilhete tipoBilhete) {
+    public Festival(String designacao, String edicao, LocalDate dataInicioFestival, LocalDate dataFimFestival, Recinto recinto){
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = designacao;
         this.entidadeColaboradora = new ArrayList<>();
         this.edicaoFestival = edicao;
-        this.dataInicioFestival = dataInicio;
-        this.dataInicioFestival = dataFimFestival;
-        this.recintoFestival = new Recinto(recinto);
-        this.palco = new HashSet<Palco>(palco);
-        this.tipoBilhete = new TipoBilhete(tipoBilhete);
-    }
-
-    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, LocalDate dataInicio, LocalDate dataFimFestival, Recinto recinto, HashSet<Palco> palco, TipoBilhete tipoBilhete) {
-        this.referenciaFestival = nroFestival++;
-        this.designacaoFestival = designacao;
-        this.entidadeColaboradora = new ArrayList<>(entidadeColaboradora);
-        this.edicaoFestival = edicao;
-        this.dataInicioFestival = dataInicio;
+        this.dataInicioFestival = dataInicioFestival;
         this.dataFimFestival = dataFimFestival;
         this.recintoFestival = new Recinto(recinto);
-        this.palco = new HashSet<Palco>(palco);
-        this.tipoBilhete = new TipoBilhete(tipoBilhete);
+        this.lstConvites = new ArrayList<>();
     }
 
-    public Festival(Festival festival) {
+    public Festival(String designacao, ArrayList<Entidade> entidadeColaboradora, String edicao, LocalDate dataInicioFestival, LocalDate dataFimFestival, Recinto recinto){
+        this.referenciaFestival = nroFestival++;
+        this.designacaoFestival = designacao;
+        this.entidadeColaboradora = new ArrayList<> (entidadeColaboradora);
+        this.edicaoFestival = edicao;
+        this.dataInicioFestival = dataInicioFestival;
+        this.dataFimFestival = dataFimFestival;
+        this.recintoFestival = new Recinto(recinto);
+        this.lstConvites = new ArrayList<>();
+    }
+
+    public Festival(Festival festival){
         this.referenciaFestival = nroFestival++;
         this.designacaoFestival = festival.designacaoFestival;
         this.edicaoFestival = festival.edicaoFestival;
         this.dataInicioFestival = festival.dataInicioFestival;
         this.dataFimFestival = festival.dataFimFestival;
-        this.recintoFestival = festival.recintoFestival;
-        this.palco = festival.palco;
-        this.tipoBilhete = festival.tipoBilhete;
+        this.recintoFestival = new Recinto(festival.recintoFestival);
+        this.lstConvites = new ArrayList<Convite>(festival.lstConvites);
+    }
+
+    public Convite novoConvite(){
+        return new Convite();
+    }
+
+    public Bilhetica novaBilhetica(Festival f,GestFest empresa){
+        return new Bilhetica(f,empresa);
     }
 
     public int getReferenciaFestival() {
@@ -91,7 +100,7 @@ public class Festival {
         return dataInicioFestival;
     }
 
-    public LocalDate getDataFimFestival() {
+    public LocalDate getDataFimFestival(){
         return dataFimFestival;
     }
 
@@ -99,12 +108,12 @@ public class Festival {
         return recintoFestival;
     }
 
-    public TipoBilhete getTipoBilhete() {
-        return tipoBilhete;
+    public List<Convite> getLstConvites() {
+        return lstConvites;
     }
 
-    public HashSet<Palco> getPalco() {
-        return new HashSet<>(palco);
+    public Bilhetica getBilhetica() {
+        return bilhetica;
     }
 
     public void setReferenciaFestival(int referenciaFestival) {
@@ -127,7 +136,7 @@ public class Festival {
         this.dataInicioFestival = dataInicioFestival;
     }
 
-    public void setDataFimFestival(LocalDate dataFimFestival) {
+    public void setDataFimFestival(LocalDate dataFimFestival){
         this.dataFimFestival = dataFimFestival;
     }
 
@@ -135,16 +144,82 @@ public class Festival {
         this.recintoFestival = recintoFestival;
     }
 
-    public void setPalco(HashSet<Palco> palco) {
-        this.palco = new HashSet<>(palco);
+    public void setLstConvites(List<Convite> lstConvites) {
+        this.lstConvites = lstConvites;
     }
 
-    public boolean valida() {
+    public void setBilhetica(Bilhetica bilhetica) {
+        this.bilhetica = bilhetica;
+    }
+   
+    public int getNroDias(){
+        return (int) DAYS.between(dataFimFestival,dataInicioFestival);
+    }
+
+    public static List<LocalDate> getDaysBetweenDates(LocalDate startdate, LocalDate enddate) {
+        long numOfDaysBetween = startdate.until(enddate.plusDays(1), ChronoUnit.DAYS);
+        return IntStream.iterate(0, i -> i + 1)
+                .limit(numOfDaysBetween)
+                .mapToObj(i -> startdate.plusDays(i))
+                .collect(Collectors.toList());
+    }
+
+    public boolean adicionaConvite(Convite convite){
+        return lstConvites.add(convite);
+    }
+
+    public boolean adicionaBilhetica(Bilhetica bilhetica){
+        return setBilhetica(bilhetica);
+    }
+
+    public boolean valida(){
         return true;
     }
 
-    public void setTipoBilhete(TipoBilhete tipoBilhete) {
-        this.tipoBilhete = tipoBilhete;
+    public boolean valida(Convite convite){
+        if (convite.valida()){
+           
+           return true;
+        }
+        return false;
+    }
+
+    public boolean valida(Bilhetica bilhetica){
+        if (bilhetica.valida()){
+           
+           return true; 
+        }
+        return false;
+    }
+
+    public String getListaConvitesAsString(){
+        for (Convite c: lstConvites) {
+            return c.toString();
+        }
+        return null;
+    }
+
+    public boolean registaConvite(Convite convite) {
+        if (this.valida(convite)) {
+           return adicionaConvite(convite);
+        }
+        return false;
+    }
+
+    public boolean registaBilhetica(Bilhetica bilhetica){
+        if (this.valida(bilhetica)) {
+            return adicionaBilhetica(bilhetica);
+        }
+        return false;
+    }
+
+    public Convite procurarConvite(int codigo){
+        for (Convite c: lstConvites) {
+            if (c.getCodigo() == codigo) {
+                return c;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -161,12 +236,11 @@ public class Festival {
                 && this.entidadeColaboradora.equals(other.entidadeColaboradora)
                 && this.edicaoFestival.equalsIgnoreCase(other.designacaoFestival)
                 && this.dataInicioFestival.equals(other.dataInicioFestival)
-                && this.dataFimFestival.equals(other.dataFimFestival)
                 && this.recintoFestival.equals(other.recintoFestival);
     }
 
     @Override
     public String toString() {
-        return "Festival{" + "referenciaFestival=" + referenciaFestival + ", designacaoFestival=" + designacaoFestival + ", entidadeColaboradora=" + entidadeColaboradora + ", edicaoFestival=" + edicaoFestival + ", dataInicioFestival=" + dataInicioFestival + ", dataFimFestival=" + dataFimFestival + ", recintoFestival=" + recintoFestival + '}';
+        return "Festival{" + "referenciaFestival=" + referenciaFestival + ", designacaoFestival=" + designacaoFestival + ", entidadeColaboradora=" + entidadeColaboradora + ", edicaoFestival=" + edicaoFestival + ", dataInicioFestival=" + dataInicioFestival + ", recintoFestival=" + recintoFestival + '}';
     }
 }

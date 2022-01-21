@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 /**
  *
- * @author andre
+ * @a
  */
 public class BilhetesFestival {
 

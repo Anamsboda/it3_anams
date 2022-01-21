@@ -12,8 +12,9 @@ import model.GestFest;
 
 /**
  *
- * @author grupox
+ * @author grupo10
  */
+
 public class ComprarBilheteController {
     private GestFest gestfest;
     private Compra compra;
@@ -30,13 +31,25 @@ public class ComprarBilheteController {
         this.compra.setFestival(gestfest.procurarFestivalDesgn(festival));
     }
 
-    public void setTipoBilhete(int numTipo) {
-        this.compra.setTipoBilhete(this.compra.getFestival().getTipoBilhete());
+    public int getNumTipos(){
+        return this.gestfest.getListaTipoBilhete().size();
+    }
+
+    public void setTipoBilhete(String tipo) {
+        this.compra.setTipoBilhete(this.compra.getFestival().);
     }
 
     public String getTipoBilhetes() {
         return gestfest.getTiposBilheteAsString();
-    } 
+    }
+
+    public void setNumBilhetes(int num){
+        this.compra.setQuantidade(num);
+    }
+
+    public int getBilhetesDisponiveis(){
+        return this.compra.getFestival().getBilhetica().get;
+    }
 
     public List<LocalDate> getDatas() {
         LocalDate startdate = this.compra.getFestival().getDataInicioFestival();
@@ -58,11 +71,11 @@ public class ComprarBilheteController {
             this.compra.setDesconto(0);
         }
     }
-    
+
     public float verificaDescontoFamilia(int qtd){
         return DescontoFamilia.obterDesconto(qtd);
     }
-    
+
     public float verificaDescontoGrupo(int qtd){
         return DescontoGrupo.obterDesconto(qtd);
     }

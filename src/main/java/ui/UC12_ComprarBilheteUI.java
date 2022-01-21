@@ -29,7 +29,7 @@ public class UC12_ComprarBilheteUI {
         controller.procurarFestival(introduzFestival());
         String tipoBilhete = controller.getTipoBilhetes();
 
-        controller.setTipoBilhete(introduzTipoBilhete(tipoBilhete.length()));
+        controller.setTipoBilhete(introduzTipoBilhete(controller.getNumTipos()));
 
         controller.setNumBilhetes(introduzNumBilhetes(controller.getBilhetesDisponiveis()));
 
@@ -46,15 +46,7 @@ public class UC12_ComprarBilheteUI {
         return Utils.readLineFromConsole("Insira o festival a trabalhar");
     }
 
-    private Integer introduzNumBilhetes(int lotacao, TipoBilhete tp) {
-        int a = 0;
-        do {
-            a = Utils.IntFromConsole("Insira o número de Bilhetes disponíveis para o tipo" + tp.getTipoBilhete());
-        } while (a < 0 || a > lotacao);
-        return new Integer(a);
-    }
-
-    private int introduzTipoBilhete(int num) {
+    private String introduzTipoBilhete(int num) {
         int a = 0;
         do {
             a = Utils.IntFromConsole("Insira o número do tipo de Bilhete que pretende aquirir");

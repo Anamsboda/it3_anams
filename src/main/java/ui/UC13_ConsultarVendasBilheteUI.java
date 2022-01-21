@@ -1,5 +1,6 @@
 package ui;
 
+import controller.ConsultarVendasBilheteController;
 import model.GestFest;
 
 /**
